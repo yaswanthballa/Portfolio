@@ -162,10 +162,14 @@
   /* PLATFORMS */
   #platforms { background:var(--bg2); }
   .platforms-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
-  .platform-card { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:28px; transition:all 0.3s; position:relative; overflow:hidden; }
+  .platform-card { background:var(--card); border:1px solid var(--border); border-radius:18px; padding:28px; transition:all 0.3s; position:relative; overflow:hidden; display:flex; flex-direction:column; }
   .platform-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--blue)); }
   .platform-card:hover { border-color:rgba(0,212,200,0.3); transform:translateY(-4px); box-shadow:0 20px 50px rgba(0,0,0,0.4); }
   .platform-name { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; color:var(--teal); margin-bottom:6px; }
+  .platform-bullets { list-style:none; margin-top:10px; display:flex; flex-direction:column; gap:6px; }
+  .platform-bullets li { font-size:0.82rem; color:rgba(240,244,248,0.65); line-height:1.6; display:flex; gap:8px; }
+  .platform-bullets li::before { content:'▸'; color:var(--teal); flex-shrink:0; margin-top:1px; }
+  .platform-sub { font-family:'Syne',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-top:14px; margin-bottom:6px; }
   .platform-full { font-size:0.82rem; color:var(--muted); margin-bottom:12px; }
   .platform-variants { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:12px; }
   .platform-variant { padding:3px 10px; background:rgba(0,212,200,0.07); border:1px solid rgba(0,212,200,0.15); border-radius:6px; font-size:0.72rem; color:rgba(0,212,200,0.8); font-family:'Syne',sans-serif; font-weight:600; }
@@ -519,7 +523,13 @@
         <span class="platform-variant">9BUX</span>
         <span class="platform-variant">9BQX</span>
       </div>
-      <div class="platform-desc">Full AUTOSAR stack delivery across six GM vehicle platforms with OEM-level validation and ASPICE compliance.</div>
+      <ul class="platform-bullets">
+        <li>Contributed to safety-critical braking functionalities — ABS, VDC, TCS, EPB, and ADAS features across multiple GM vehicle variants</li>
+        <li>EPB integration with Bosch as host: Mando as actuator supplier for A2XX &amp; D2XX variants, Brembo for Y2XX, and ZF for 9BUX &amp; 9BQX variants</li>
+        <li>Supported errata ratings — evaluating and classifying software defects against functional safety criteria</li>
+        <li>Performed vehicle trace evaluation — analyzing real-world CAN traces for system behavior verification and anomaly detection</li>
+        <li>Addressed customer queries from General Motors, providing timely technical responses and issue resolution across active programs</li>
+      </ul>
     </div>
     <div class="platform-card">
       <div class="platform-name">GM ESP+DPB</div>
@@ -528,7 +538,15 @@
         <span class="platform-variant">T1XX</span>
         <span class="platform-variant">Two Box Solution</span>
       </div>
-      <div class="platform-desc">Multi-domain chassis integration — VDC, TCS, and ABS software co-development with real-time CARsim vehicle-level validation.</div>
+      <div class="platform-sub">EPB Development &amp; Simulation</div>
+      <ul class="platform-bullets">
+        <li>Contributed to EPB functionality following the complete V-model lifecycle — requirements analysis through testing and validation</li>
+        <li>Collaborated with Mobis (actuator supplier) to ensure seamless hardware-software integration within the Bosch-hosted system</li>
+        <li>Acted as key point of contact for customer queries and problem work items raised during testing phases</li>
+        <li>Analyzed defects, performed root cause analysis, and implemented fixes ensuring functional correctness and system reliability</li>
+        <li>Supported cross-functional alignment between stakeholders, improving overall development efficiency</li>
+        <li>Worked with CARsim for vehicle-level behavior validation and MATLAB/Simulink for model creation and analysis</li>
+      </ul>
     </div>
     <div class="platform-card">
       <div class="platform-name">GM IPB 2.0 + RBU</div>
@@ -536,7 +554,17 @@
       <div class="platform-variants">
         <span class="platform-variant">SDV Program</span>
       </div>
-      <div class="platform-desc">Next-gen SDV braking platform with enhanced diagnostic architecture, CAN FD migration, and expanded Ethernet connectivity.</div>
+      <div class="platform-sub">Slip Control Integration for SoftECU Builds</div>
+      <ul class="platform-bullets">
+        <li>Integrated slip control functionality into SoftECU builds, ensuring seamless compatibility with existing system architecture</li>
+        <li>Diagnosed and resolved compilation-phase errors, improving build stability and reducing integration issues</li>
+        <li>Contributed to enhancing overall system reliability and performance during development cycles</li>
+      </ul>
+      <div class="platform-sub">MCGT — Modular Common Generic Test</div>
+      <ul class="platform-bullets">
+        <li>Worked on MCGT framework to support standardized testing across modules</li>
+        <li>Assisted in designing and executing test cases for validating system functionality and performance</li>
+      </ul>
     </div>
   </div>
 </section>
