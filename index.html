@@ -286,6 +286,33 @@ footer strong{color:var(--teal);}
   .photo-shell{width:260px;}
   .sec{padding:64px 1.25rem;}
 }
+
+/* SOFTECУ VERIFICATION BLOCK */
+.verify-wrap{margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border);}
+.verify-header{display:flex;align-items:center;gap:14px;margin-bottom:1.8rem;}
+.verify-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;
+  background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);
+  border-radius:8px;font-family:var(--font-mono);font-size:.65rem;color:#a5b4fc;
+}
+.verify-badge-dot{width:5px;height:5px;background:#a5b4fc;border-radius:50%;box-shadow:0 0 6px #a5b4fc;animation:pip 2s infinite;}
+.verify-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--white);}
+.verify-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.verify-item{
+  display:flex;gap:12px;
+  background:rgba(99,102,241,0.04);
+  border:1px solid rgba(99,102,241,0.12);
+  border-radius:13px;padding:16px 18px;transition:all .3s;
+}
+.verify-item:hover{border-color:rgba(99,102,241,0.3);background:rgba(99,102,241,0.08);transform:translateX(4px);}
+.verify-num{font-family:var(--font-mono);font-size:.58rem;color:#a5b4fc;width:20px;flex-shrink:0;padding-top:2px;}
+.verify-body{}
+.verify-item-title{font-size:.84rem;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.4;}
+.verify-item-desc{font-size:.77rem;color:rgba(240,246,255,.55);line-height:1.6;}
+.verify-tag{display:inline-block;margin-top:6px;padding:2px 8px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);border-radius:4px;font-family:var(--font-mono);font-size:.58rem;color:#a5b4fc;}
+.verify-stat{display:inline-block;margin-top:6px;padding:2px 8px;background:rgba(0,212,200,.08);border:1px solid rgba(0,212,200,.15);border-radius:4px;font-family:var(--font-mono);font-size:.58rem;color:var(--teal);}
+@media(max-width:640px){.verify-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -302,7 +329,7 @@ footer strong{color:var(--teal);}
     <li><a href="#automation">Automation</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Certs</a></li>
-    <li><a href="#platforms">Platforms</a></li>
+    <li><a href="#smoke-test">Smoke Test</a></li><li><a href="#platforms">Platforms</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-actions">
@@ -482,6 +509,70 @@ footer strong{color:var(--teal);}
     </div>
   </div>
 </section>
+
+<div class="sep"></div>
+
+<!-- SOFTECУ VERIFICATION -->
+<section class="sec" id="smoke-test">
+  <p class="sec-tag">SoftECU Simulation Verification</p>
+  <h2 class="sec-h rv-l">Python Automation &amp; <em>Smoke Testing</em></h2>
+  <div class="rv">
+    <div class="verify-header">
+      <div class="verify-badge"><span class="verify-badge-dot"></span>Python &nbsp;·&nbsp; GM IPB &nbsp;·&nbsp; SoftECU &nbsp;·&nbsp; CI/CD &nbsp;·&nbsp; NMAKE &nbsp;·&nbsp; MTC Post-Build</div>
+    </div>
+    <div class="verify-grid">
+      <div class="verify-item">
+        <span class="verify-num">01</span>
+        <div class="verify-body">
+          <div class="verify-item-title">Smoke Test Automation Framework</div>
+          <div class="verify-item-desc">Developed a Python-based smoke test script to validate SoftECU simulation build outputs for GM IPB, replacing manual verification steps in the post-build pipeline entirely.</div>
+          <span class="verify-tag">GM IPB Project</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <span class="verify-num">02</span>
+        <div class="verify-body">
+          <div class="verify-item-title">Deterministic Pass/Fail Logic</div>
+          <div class="verify-item-desc">Implemented artifact presence and integrity checks as the source of truth for build validation — decoupling test outcome from unreliable process exit codes and eliminating false results.</div>
+          <span class="verify-tag">Artifact-based verification</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <span class="verify-num">03</span>
+        <div class="verify-body">
+          <div class="verify-item-title">Intelligent Timeout &amp; Graceful Fallback</div>
+          <div class="verify-item-desc">Implemented timeout handling with graceful fallback — if the build process exceeds the configured threshold, the script still evaluates generated artifacts to determine the result, preventing false failures in CI/CD pipelines.</div>
+          <span class="verify-tag">False failure prevention</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <span class="verify-num">04</span>
+        <div class="verify-body">
+          <div class="verify-item-title">MTC Post-Build Workflow Integration</div>
+          <div class="verify-item-desc">Integrated into the MTC post-build workflow, enabling automatic validation of M2E/E2M signal interface mappings and measurement descriptor metadata after every SoftECU build.</div>
+          <span class="verify-tag">M2E / E2M signal mapping</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <span class="verify-num">05</span>
+        <div class="verify-body">
+          <div class="verify-item-title">200+ Hardware Signal Interface Validation</div>
+          <div class="verify-item-desc">Validated 200+ hardware signal interfaces — pressure sensors, magnetic valves, wheel speed sensors, motor control outputs — by verifying the signal registry produced by the SoftECU DLL build.</div>
+          <span class="verify-stat">200+ signals verified</span>
+        </div>
+      </div>
+      <div class="verify-item">
+        <span class="verify-num">06</span>
+        <div class="verify-body">
+          <div class="verify-item-title">CI/CD-Ready Design</div>
+          <div class="verify-item-desc">Returns standard exit codes consumed by NMAKE with structured logging compatible with build system log parsers — designed for seamless CI/CD pipeline integration from the ground up.</div>
+          <span class="verify-tag">NMAKE compatible</span><span class="verify-stat" style="margin-left:4px">Structured logging</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <div class="sep"></div>
 
@@ -672,7 +763,7 @@ window.addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>30),{p
 
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.07});
 document.querySelectorAll('.rv,.rv-l').forEach(el=>io.observe(el));
-document.querySelectorAll('.str-grid,.plat-grid,.certs-list,.skills-mosaic,.kpis,.auto-right,.auto-metrics').forEach(g=>{
+document.querySelectorAll('.str-grid,.plat-grid,.certs-list,.skills-mosaic,.kpis,.auto-right,.auto-metrics,.verify-grid').forEach(g=>{
   [...g.children].forEach((c,i)=>{c.classList.add('rv');c.style.transitionDelay=(i*.08)+'s';io.observe(c);});
 });
 
