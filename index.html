@@ -416,6 +416,7 @@ footer strong{color:var(--teal);}
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#automation">Automation</a></li>
+    <li><a href="#capl-automation">CAPL</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#smoke-test">Smoke Test</a></li><li><a href="#platforms">Platforms</a></li>
@@ -689,6 +690,76 @@ footer strong{color:var(--teal);}
   </div>
 </section>
 
+
+<div class="sep"></div>
+
+<!-- CAPL FSIL AUTOMATION -->
+<section class="sec" id="capl-automation">
+  <p class="sec-tag">Vector CANoe · CAPL Scripting</p>
+  <h2 class="sec-h rv-l">FSIL ECU Commissioning <em>Automation</em></h2>
+  <div class="auto-wrap">
+    <div class="auto-left rv">
+      <p class="auto-intro">Built an end-to-end <strong>CANoe CAPL automation framework</strong> for FSIL L3 VECU testing, eliminating every manual step in a 4-phase ECU commissioning sequence &mdash; WakeUp, Heartbeat, Key Provisioning, and SD Learning &mdash; for a GM SDV2 EBCM Ethernet brake control ECU (EBCM_ETH).</p>
+      <div class="auto-tool-badge"><span class="auto-tool-dot"></span>CANoe TBE 19 SP2 &nbsp;·&nbsp; CAPL &nbsp;·&nbsp; SOME/IP &nbsp;·&nbsp; DoIP/TCP &nbsp;·&nbsp; GM SDV2 EBCM_ETH</div>
+      <div class="auto-metrics">
+        <div class="auto-metric"><div class="auto-metric-val" data-t="4">0</div><div class="auto-metric-lbl">commissioning<br>phases automated</div></div>
+        <div class="auto-metric"><div class="auto-metric-val" data-t="21">0</div><div class="auto-metric-lbl">SD Learn steps<br>automated</div></div>
+        <div class="auto-metric"><div class="auto-metric-val">15m&rarr;1</div><div class="auto-metric-lbl">click setup time<br>&mdash; from ~15 min</div></div>
+        <div class="auto-metric"><div class="auto-metric-val" data-t="0">0</div><div class="auto-metric-lbl">operator intervention<br>after measurement start</div></div>
+      </div>
+    </div>
+    <div class="auto-right">
+      <div class="auto-item">
+        <span class="auto-item-num">01</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">Ethernet Wakeup &amp; Heartbeat Automation</div>
+          <div class="auto-item-desc">Automated Ethernet ECU wakeup (TC10 wakeup frame over SOME/IP) and cyclic heartbeat provisioning via CAPL timer state machines integrated with the EGM2 bench panel, replacing manual multi-step panel interactions with a single button press.</div>
+          <span class="auto-item-tag">Single button press</span>
+        </div>
+      </div>
+      <div class="auto-item">
+        <span class="auto-item-num">02</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">VDS C# Script Parser for Key Provisioning</div>
+          <div class="auto-item-desc">Developed a VDS C# script parser in CAPL to interpret .cs provisioning files and transmit UDS diagnostic requests over DoIP/TCP &mdash; enabling machine-independent key provisioning without script conversion or manual Diagnostic Console interaction.</div>
+          <span class="auto-item-tag">Machine-independent provisioning</span>
+        </div>
+      </div>
+      <div class="auto-item">
+        <span class="auto-item-num">03</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">SOME/IP Service Lifecycle Automation</div>
+          <div class="auto-item-desc">Integrated Profile Activation (CH1/CH2), Enable All Services, and Event Group Subscription (Service_3163, Service_3164) for VMCEV simulated peer nodes &mdash; driven entirely by sysvar writes from CAPL.</div>
+          <span class="auto-item-tag">Sysvar-driven</span>
+        </div>
+      </div>
+      <div class="auto-item">
+        <span class="auto-item-num">04</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">SD Learning Routine Automation</div>
+          <div class="auto-item-desc">Automated the SD Learning routine (31 01 06 54), including the 5-second TRANSMIT enable timing constraint and post-learning profile reactivation &mdash; replacing a 7-step manual Diagnostic Console procedure.</div>
+          <span class="auto-item-tag">7-step manual procedure eliminated</span>
+        </div>
+      </div>
+      <div class="auto-item">
+        <span class="auto-item-num">05</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">Dual-Node TCP/DoIP Architecture</div>
+          <div class="auto-item-desc">Engineered a dual-node TCP/DoIP architecture where two CAPL nodes (EGM2 bench + RBS) hand off via a shared sysvar trigger (AutoRun::TriggerKP), coordinating across two separate CANoe configurations.</div>
+          <span class="auto-item-tag">Cross-configuration handoff</span>
+        </div>
+      </div>
+      <div class="auto-item">
+        <span class="auto-item-num">06</span>
+        <div class="auto-item-body">
+          <div class="auto-item-title">Reusable CANoe Panel UIs</div>
+          <div class="auto-item-desc">Built reusable CANoe panel UIs (.xvp) with CAPL OutputView logging, sysvar-bound controls, and status indicators &mdash; giving real-time visibility into automation progress across all 21 SD Learn steps.</div>
+          <span class="auto-item-tag">Real-time status visibility</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <div class="sep"></div>
 
